@@ -1,63 +1,60 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-   <head>
-      <meta charset="utf-8">
-      <title>Login Form Design | CodeLab</title>
-      <link rel="stylesheet" href="style.css">
-   </head>
-   <body>
-      <div class="wrapper">
-         <div class="title">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Login Form Design</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="title">
             Login Form
-         </div>
-         <form id="loginForm">
-            <div class="field">
-               <input type="text" id="email" required>
-               <label>Email Address</label>
-            </div>
-            <div class="field">
-               <input type="password" id="password" required>
-               <label>Password</label>
-            </div>
-            <div class="content">
-               <div class="checkbox">
-                  <input type="checkbox" id="remember-me">
-                  <label for="remember-me">Remember me</label>
-               </div>
-               <div class="pass-link">
-                  <a href="#">Forgot password?</a>
-               </div>
-            </div>
-            <div class="field">
-               <input type="submit" value="Login">
-            </div>
-            <div class="signup-link">
-               Not a member? <a href="#">Signup now</a>
-            </div>
-         </form>
-      </div>
-      
-      <script>
-         document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the default form submission
-            // Get form data
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            const rememberMe = document.getElementById('remember-me').checked;
-            
-            // Simulate saving data
-            console.log('Email:', email);
-            console.log('Password:', password);
-            console.log('Remember Me:', rememberMe);
-
-            // Example: Save to local storage (for demonstration purposes)
-            localStorage.setItem('email', email);
-            localStorage.setItem('password', password);
-            localStorage.setItem('rememberMe', rememberMe);
-
-            // Display a message or redirect to another page
-            alert('Login data saved!');
-         });
-      </script>
-   </body>
+        </div>
+        <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+        <div id="id01" class="modal">
+            <form class="modal-content animate" action="" method="post">
+                <div class="imgcontainer">
+                    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+                    <img src="img_avatar2.png" alt="Avatar" class="avatar"/>
+                </div>
+                <div class="container">
+                    <div class="field">
+                        <input type="text" id="uname" required>
+                        <label for="uname">Username</label>
+                    </div>
+                    <div class="field">
+                        <input type="password" id="psw" required>
+                        <label for="psw">Password</label>
+                    </div>
+                    <div class="content">
+                        <div class="checkbox">
+                            <input type="checkbox" id="remember-me" checked="checked">
+                            <label for="remember-me">Remember me</label>
+                        </div>
+                        <div class="pass-link">
+                            <a href="#">Forgot password?</a>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <input type="submit" value="Login">
+                    </div>
+                    <div class="container" style="background-color:#f1f1f1">
+                        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        // Get the modal
+        var modal = document.getElementById('id01');
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
 </html>
