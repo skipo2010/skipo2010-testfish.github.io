@@ -1,41 +1,132 @@
 <!DOCTYPE html>
-<!-- Created By CodingNepal -->
 <html lang="en" dir="ltr">
-   <head>
-      <meta charset="utf-8">
-      <title>Login Form Design | CodeLab</title>
-      <link rel="stylesheet" href="style.css">
-   </head>
-   <body>
-      <div class="wrapper">
-         <div class="title">
+<head>
+    <meta charset="utf-8">
+    <title>Login Form Design | CodeLab</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f2f2f2;
+        }
+        .wrapper {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+        .wrapper .title {
+            font-size: 24px;
+            font-weight: 600;
+            text-align: center;
+        }
+        .wrapper form {
+            margin-top: 20px;
+        }
+        .wrapper form .field {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .wrapper form .field input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .wrapper form .field label {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            font-size: 16px;
+            color: #aaa;
+            pointer-events: none;
+            transition: all 0.3s;
+        }
+        .wrapper form .field input:focus + label,
+        .wrapper form .field input:valid + label {
+            top: 5px;
+            font-size: 12px;
+            color: #333;
+        }
+        .wrapper form .content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .wrapper form .content .checkbox {
+            display: flex;
+            align-items: center;
+        }
+        .wrapper form .content .checkbox input {
+            margin-right: 5px;
+        }
+        .wrapper form .content .pass-link {
+            font-size: 14px;
+        }
+        .wrapper form .field input[type="submit"] {
+            background: #04AA6D;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .wrapper form .field input[type="submit"]:hover {
+            background: #039955;
+        }
+        .wrapper form .signup-link {
+            text-align: center;
+            font-size: 14px;
+        }
+        .wrapper form .signup-link a {
+            color: #04AA6D;
+            text-decoration: none;
+        }
+        .wrapper form .signup-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="title">
             Login Form
-         </div>
-         <form action="#">
+        </div>
+        <form action="submit_form.php" method="POST">
             <div class="field">
-               <input type="text" required>
-               <label>Email Address</label>
+                <input type="text" name="email" required>
+                <label>Email Address</label>
             </div>
             <div class="field">
-               <input type="password" required>
-               <label>Password</label>
+                <input type="password" name="password" required>
+                <label>Password</label>
             </div>
             <div class="content">
-               <div class="checkbox">
-                  <input type="checkbox" id="remember-me">
-                  <label for="remember-me">Remember me</label>
-               </div>
-               <div class="pass-link">
-                  <a href="#">Forgot password?</a>
-               </div>
+                <div class="checkbox">
+                    <input type="checkbox" id="remember-me">
+                    <label for="remember-me">Remember me</label>
+                </div>
+                <div class="pass-link">
+                    <a href="#">Forgot password?</a>
+                </div>
             </div>
             <div class="field">
-               <input type="submit" value="Login">
+                <input type="submit" value="Login">
             </div>
             <div class="signup-link">
-               Not a member? <a href="#">Signup now</a>
+                Not a member? <a href="#">Signup now</a>
             </div>
-         </form>
-      </div>
-   </body>
+        </form>
+    </div>
+</body>
 </html>
